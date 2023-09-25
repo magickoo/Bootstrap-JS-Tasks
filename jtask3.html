@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task 3 Javascript</title>
+    <style>
+        body {
+            text-align: center;
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        /* Add border to the form */
+        .container {
+            border: 2px solid black;
+            padding: 20px;
+            display: inline-block; /* Keep the form inline */
+            text-align: left; /* Align form content to the left */
+        }
+
+        /* Style the input fields */
+        input[type="text"] {
+            width: 100px;
+        }
+
+        /* Style the buttons */
+        .button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 2px;
+            padding: 3px 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        /* Style the result span */
+        #result {
+            text-align: left; /* Align result to the left */
+            margin-top: 10px; /* Add margin to separate it from buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            1st Number : <input type="text" id="firstNumber" /><br>
+            2nd Number: <input type="text" id="secondNumber" /><br><br>
+            <input class="button" type="button" onClick="multiplyBy(this)" Value="Multiply" />
+            <input class="button" type="button" onClick="divideBy(this)" Value="Divide" />
+        </form>
+        <p>The Result is : <br>
+        <span id="result"></span>
+        </p>
+    </div>
+
+    <script>
+        function multiplyBy(button) {
+            num1 = document.getElementById("firstNumber").value;
+            num2 = document.getElementById("secondNumber").value;
+            document.getElementById("result").innerHTML = num1 * num2;
+
+            // Change border color to blue
+            button.style.border = "2px solid blue";
+
+            // Reset the border color after a delay
+            setTimeout(function() {
+                button.style.border = "1px solid black";
+            }, 1000); // Change the delay (in milliseconds) as needed
+        }
+
+        function divideBy(button) {
+            num1 = document.getElementById("firstNumber").value;
+            num2 = document.getElementById("secondNumber").value;
+            document.getElementById("result").innerHTML = num1 / num2;
+
+            // Change border color to blue
+            button.style.border = "2px solid blue";
+
+            // Reset the border color after a delay
+            setTimeout(function() {
+                button.style.border = "1px solid black";
+            }, 1000); // Change the delay (in milliseconds) as needed
+        }
+    </script>
+</body>
+</html>
